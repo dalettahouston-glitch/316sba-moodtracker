@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<!-- saved from url=(0054)http://127.0.0.1:5500/module_316_DOM/316sba/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title>Daily Mood Tracker</title>
+  
+<link rel="stylesheet" href="./Daily Mood Tracker_files/style.css"></head>
+<body>
+
+  <div class="container">
+    <h1>Daily Mood Tracker</h1>
+
+    <!-- Live Date + Time -->
+    <p id="current-date" class="time-display">3/2/2026</p>
+    <p id="current-time" class="time-display">1:25:17 PM</p>
+
+   
+    <div class="form-section">
+
+      <label for="mood">Mood</label>
+      <select id="mood" required="">
+        <option value="">Select mood</option>
+        <option>😊 Happy</option>
+        <option>😢 Sad</option>
+        <option>🤩 Excited</option>
+        <option>😡 Angry</option>
+        <option>😌 Calm</option>
+      </select>
+
+      <label for="note">Note</label>
+      <input type="text" id="note" placeholder="Write a short note" required="" minlength="3">
+
+      <button id="addMoodBtn" class="add-btn">Add Mood</button>
+
+      <p id="error" class="error">Please fill out all fields correctly.</p>
+
+      <button id="motivationBtn" class="motivation-btn">Show Motivation</button>
+      <p id="motivationMessage" class="motivation-text"></p>
+    </div>
+
+   
+    <div id="moodList" class="mood-list">
+      <div class="mood-entry">
+        <h3 class="mood-text">Mood: 😢 Sad</h3>
+        <p class="note-text">Note: sad</p>
+        <p class="time-text">3/2/2026, 11:31:33 AM</p>
+        <button class="delete-btn">Delete</button>
+      </div>
+    
+      <div class="mood-entry">
+        <h3 class="mood-text">Mood: 😊 Happy</h3>
+        <p class="note-text">Note: hhh</p>
+        <p class="time-text">3/2/2026, 11:19:22 AM</p>
+        <button class="delete-btn">Delete</button>
+      </div>
+    
+      <div class="mood-entry">
+        <h3 class="mood-text">Mood: 😡 Angry</h3>
+        <p class="note-text">Note: mad</p>
+        <p class="time-text">3/2/2026, 11:06:16 AM</p>
+        <button class="delete-btn">Delete</button>
+      </div>
+    
+      <div class="mood-entry">
+        <h3 class="mood-text">Mood: 😊 Happy</h3>
+        <p class="note-text">Note: hhh</p>
+        <p class="time-text">3/2/2026, 10:37:07 AM</p>
+        <button class="delete-btn">Delete</button>
+      </div>
+    </div>
+
+
+    <template id="moodTemplate"></template>
+
+  </div>
+
+  <script src="./Daily Mood Tracker_files/script.js.download"></script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+</body></html>
